@@ -1,0 +1,15 @@
+{
+  "name": "bootstrap-scoper",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Grigory Koscheev <grigory.koscheev@gmail.com>",
+  "license": "UNLICENSED",
+  "description": "",
+  "dependencies": {
+    "node-sass": "^9.0.0",
+    "sass": "^1.90.0"
+  }
+}
