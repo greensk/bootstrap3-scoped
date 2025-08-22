@@ -32,6 +32,7 @@ jobs:
       - name: Prepare
         run: |
           cp -r node_modules/bootstrap3/dist/css ./bootstrap
+          node index.js
           zip -r ../bootstrap3-scoped.zip ./boostrap3-scoped.css
       - name: Release
         env:
