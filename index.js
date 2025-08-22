@@ -1,39 +1,21 @@
-/*
-const sass = require('sass');
-const result = sass.compile(
-  'index.sass',
-  {
-  }
-);
-// console.log(result);
-result.css.toString()
+const sass = require('node-sass')
+const fsPromises = require('fs/promises')
 
-*/
-/*
-var sass = require('node-sass');
-sass.render(
-  {
+const outputFile = 'bootstrap3-scoped.css'
+
+async function run () {
+  sass.render({
     file: 'index.sass',
-    importer: (fileName) => {
-      console.log(fileName)
+    includePaths: ['bootstrap'],
+    outputStyle: 'expanded',
+  }, async function(err, result) {
+    console.log(result)
+    if (!err) {
+      await fsPromises.writeFile(outputFile, result.css)
+    } else {
+      console.error(err)
     }
-  },
-  function(err, result) {
-    // console.log(result)
-    result.css.toString()
-  }
-);
-*/
-const sass = require('node-sass');
+  })
+}
 
-sass.render({
-  file: 'index.sass',
-  includePaths: ['bootstrap'],
-  outputStyle: 'expanded',
-}, function(err, result) {
-  if (!err) {
-    console.log(result.css.toString());
-  } else {
-    console.error(err);
-  }
-});
+run()
