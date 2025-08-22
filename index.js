@@ -2,17 +2,9 @@ const sass = require('node-sass')
 const fsPromises = require('fs/promises')
 
 async function run () {
-  console.log(process.argv[2])
-  let [ prefix, outputFile ] = String(process.argv[2] || '').split()
-
-  if (!outputFile) {
-    outputFile = 'bootstrap3-scoped.css'
-  }
-  if (!prefix) {
-    console.log('noprefix')
-    prefix = '.bootstrap'
-  }
-  console.log(prefix)
+  const prefix = process.argv[2] || '.bootstrap'
+  const outputFile = process.argv[3] || 'bootstrap3-scoped.css'
+  
   await fsPromises.writeFile(
     'index.sass',
     `${prefix}\n\t@import "bootstrap/bootstrap.min";\n\t@import "bootstrap/bootstrap-theme.min";\n`

@@ -9,7 +9,14 @@
   "license": "UNLICENSED",
   "description": "",
   "dependencies": {
+    "bootstrap3": "^3.3.5",
     "node-sass": "^9.0.0",
     "sass": "^1.90.0"
+  },
+  "devDependencies": {
+    "@semantic-release/commit-analyzer": "^13.0.1",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^11.0.4",
+    "semantic-release": "^24.2.7"
   }
 }

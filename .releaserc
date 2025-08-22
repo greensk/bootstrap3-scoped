@@ -1,0 +1,15 @@
+{
+  "branches": ["master"],
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/git",
+    [
+      "@semantic-release/github",
+      {
+        "assets": [
+          {"path": "bootstrap3-scoped.zip", "label": "Distribution Zip"}
+        ]
+      }
+    ]
+  ]
+}
